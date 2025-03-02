@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trener Kon - BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="../assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/trainers.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="bio-container">
+        <img src="../assets/images/trainers/kon.webp" alt="Trener Kon">
+        <h1>Trener Kon</h1>
+        <p>
+            Trener Kon jest jedną z najbardziej enigmatycznych postaci w świecie BJJ. Powszechnie uważa się, że nie narodził się w sposób konwencjonalny – według jednych został uformowany z mgły unoszącej się nad Amazonką, według innych – wyłonił się z wiru wodnego w jeziorze, od razu w pozycji do duszenia przeciwnika. 
+        </p>
+        <p>
+            W dzieciństwie był jedynym dzieckiem, które nigdy nie upadło – każda próba przewrócenia go kończyła się na tym, że to ziemia się poddawała. Legenda głosi, że kiedyś przewrócił cień człowieka tylko po to, by sprawdzić, czy to możliwe. W wieku pięciu lat przez przypadek wynalazł technikę, która do dziś jest zakazana na oficjalnych zawodach, ponieważ wywołuje u przeciwników egzystencjalny kryzys i chęć natychmiastowej zmiany zawodu.
+        </p>
+        <p>
+            Kon podróżował po świecie, szukając najlepszych mistrzów sztuk walki. Kiedy spotkał starego mistrza w odległej górskiej wiosce, ten popatrzył na niego, wzruszył ramionami i powiedział: „Nie mam cię czego nauczyć, ale możesz mi pokazać kilka trików”. Przez lata Kon doskonalił swoje umiejętności, trenując z nieistniejącymi przeciwnikami, co sprawiło, że stał się mistrzem przewidywania ruchów osób, które nawet nie myślały jeszcze o ataku.
+        </p>
+        <p>
+            Jego styl walki jest nieprzewidywalny i oparty na zasadzie „Przeciwnik nie może cię pokonać, jeśli on sam nie rozumie, co się dzieje”. Czasem wygrywa pojedynki, zanim się rozpoczną, po prostu patrząc na tabelę turniejową. 
+        </p>
+        <p>
+            Jako trener Kon stosuje metody, które dla zwykłych ludzi mogą wydawać się kontrowersyjne. Na przykład każe swoim uczniom walczyć z niewidzialnymi przeciwnikami, a potem nagradza ich punktami za „czystość stylu” w tych wyimaginowanych starciach. Według niego najlepszym sposobem na uniknięcie poddania jest przekonanie przeciwnika, że walka wcale się nie zaczęła.
+        </p>
+        <p>
+            Poza matą Kon jest ekspertem w dziedzinie sztuki gotowania posiłków, które wyglądają jak inne potrawy – kiedyś stworzył omlet, który wyglądał jak sushi, i sushi, które wyglądało jak omlet. Prowadzi też badania nad tym, czy można poddać samą koncepcję walki, co sprawia, że filozofowie od lat próbują zrozumieć jego podejście.
+        </p>
+        <p>
+            Jeśli chcesz trenować z człowiekiem, który zna techniki, o których nikt jeszcze nie słyszał, i który potrafi pokonać przeciwnika samym konceptem dezorientacji, Trener Kon jest idealnym wyborem!
+        </p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

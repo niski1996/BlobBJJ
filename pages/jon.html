@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trener Jon - BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="../assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/trainers.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="bio-container">
+        <img src="../assets/images/trainers/jon.jpg" alt="Trener Jon">
+        <h1>Trener Jon</h1>
+        <p>
+            Trener Jon to człowiek, o którym krążą legendy. Według jednej z nich urodził się już w kimonie BJJ i od razu przeszedł do walki o pierwsze miejsce na podium porodówki. Jego dzieciństwo było nietypowe – zamiast uczyć się chodzić, od razu zaczął wykonywać perfekcyjne berimbolo, a pierwsze słowo, jakie wypowiedział, to „omoplata”. 
+        </p>
+        <p>
+            W młodym wieku Jon odkrył, że ma niezwykły dar – potrafił poddać przeciwnika samym spojrzeniem. Jego matka wielokrotnie musiała tłumaczyć nauczycielom w szkole, dlaczego uczniowie nagle rzucali się na podłogę i poddawali, gdy tylko Jon na nich spojrzał. Próbował swoich sił w innych sportach, ale wszystkie okazywały się dla niego zbyt proste – w szachach wymuszał poddanie poprzez skuteczne duszenie figur, a w tenisie przeciwnik poddawał się, zanim zdążył uderzyć piłkę. 
+        </p>
+        <p>
+            Przez lata podróżował po świecie, trenując z najlepszymi mistrzami BJJ, ale to oni najczęściej kończyli na ziemi, zdziwieni jego umiejętnościami. W Brazylii zyskał przydomek „Człowiek Gumowa Kość”, gdyż jego ciało jest tak elastyczne, że pewnego razu udało mu się przeprowadzić dźwignię na samym sobie. 
+        </p>
+        <p>
+            Po powrocie do kraju postanowił zostać trenerem i dzielić się swoją wiedzą z innymi. Jego filozofia walki opiera się na zasadzie: „Najlepsza obrona to… nie dać się dotknąć”. Jego uczniowie opanowali sztukę unikania ataków do tego stopnia, że niektórzy są uznawani za niewidzialnych. 
+        </p>
+        <p>
+            Prywatnie Jon jest pasjonatem zbierania rzadkich nasion roślin, które nie istnieją, oraz eksperymentalnym kucharzem, który uważa, że najlepsze dania to te, których nie da się zjeść bez ryzyka poddania się własnym kubkom smakowym. 
+        </p>
+        <p>
+            Trening z Trenerem Jonem to nie tylko walka, ale i podróż przez świat absurdalnej strategii, gdzie przeciwnik poddaje się, zanim zdąży zrozumieć, co się właściwie wydarzyło. Jeśli chcesz trenować z człowiekiem, który prawdopodobnie jest żywą legendą (albo jedynie snem zbiorowej podświadomości), to Jon jest trenerem dla Ciebie!
+        </p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -35,8 +35,9 @@ body {
 
 .caption {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
+    color: black;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
@@ -47,4 +48,58 @@ body {
 
 .gallery-item:hover .caption {
     opacity: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#header-container {
+    background-color: #222;
+    padding: 10px 0;
+}
+
+.bio-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.bio-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #222;
+}
+
+h1 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

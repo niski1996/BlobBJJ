@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trener Gon - BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="../assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/trainers.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="bio-container">
+        <img src="../assets/images/trainers/gon.webp" alt="Trener Gon">
+        <h1>Trener Gon</h1>
+        <p>
+            Trener Gon to postać legendarna w świecie Brazylijskiego Jiu-Jitsu, choć jego początki były co najmniej nietypowe. Urodzony w małej wiosce położonej na szczycie góry, gdzie powietrze jest tak rzadkie, że nawet jogini tracą przytomność po pięciu minutach, Gon od dzieciństwa wykazywał niezwykłą odporność na brak tlenu. To właśnie tam, w wieku trzech lat, wynalazł własny styl walki oparty na przypadkowych upadkach i przewrotach, który z czasem został uznany za fundament jego niepowtarzalnej techniki.
+        </p>
+        <p>
+            W wieku siedmiu lat został porwany przez koczownicze plemię wędrownych akrobatów, które nauczyło go sztuki przewidywania przyszłości na podstawie ruchów przeciwnika. Po pięciu latach surowego treningu Gon wrócił do cywilizacji, by z marszu wygrać pierwsze zawody w Jiu-Jitsu, nie mając pojęcia, że bierze w nich udział – przyszedł tylko, żeby zapytać o godzinę. Jego styl walki, określany przez przeciwników mianem „chaotycznej harmonii”, jest połączeniem intuicji, improwizacji i czystego przypadku, co sprawia, że nawet najbardziej doświadczeni zawodnicy nie wiedzą, czego się po nim spodziewać.
+        </p>
+        <p>
+            Oprócz trenowania BJJ, Gon jest także pasjonatem zbierania kamieni o dziwnych kształtach oraz profesjonalnym degustatorem lodów, co często prowadzi do nieoczekiwanych wyzwań na macie, gdyż potrafi przeprowadzić sparing, jednocześnie analizując subtelne niuanse smaku czekoladowo-miętowego. Jego filozofia treningu opiera się na zasadzie: „Jeśli nie wiesz, co robisz, przeciwnik tym bardziej nie wie”, co sprawia, że jego uczniowie są przygotowani na każdą ewentualność – nawet tę, której nie da się przewidzieć.
+        </p>
+        <p>
+            Jako trener, Gon słynie z nietypowych metod nauczania. Zamiast tradycyjnego rozgrzewania, każe uczniom naśladować ruchy spadających liści. Uważa również, że najlepsza obrona to udawanie, że się nie istnieje, co kilka razy zakończyło się sukcesem w oficjalnych zawodach. 
+        </p>
+        <p>
+            Jeśli marzysz o treningu z trenerem, który jednocześnie rozśmieszy cię do łez i nauczy cię jak pokonać przeciwnika, zanim zdąży zrozumieć, co się stało, Trener Gon jest wyborem idealnym.
+        </p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

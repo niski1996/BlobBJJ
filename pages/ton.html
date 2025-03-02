@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trener Ton - BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="../assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/trainers.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="bio-container">
+        <img src="../assets/images/trainers/ton.webp" alt="Trener Ton">
+        <h1>Trener Ton</h1>
+        <p>
+            Trener Ton jest prawdopodobnie jedyną osobą na świecie, która odkryła Jiu-Jitsu, zanim Jiu-Jitsu odkryło jego. Według niektórych źródeł jego techniki są tak zaawansowane, że rzeczywistość czasem nie nadąża za jego ruchami – zdarzało się, że przeciwnik poddawał się kilka minut przed rozpoczęciem walki, przewidując nieuniknione. 
+        </p>
+        <p>
+            Jego młodość była pełna niezwykłych wydarzeń. Pewnego razu, będąc dzieckiem, przypadkowo wykonał perfekcyjny balach na krześle, a ono nigdy już nie było takie samo. W wieku sześciu lat był tak utalentowany, że został zaproszony na specjalne seminarium, gdzie mistrzowie sztuk walki debatowali nad jego ruchami, próbując je zrozumieć. W końcu poddali się i po prostu zaczęli je naśladować.
+        </p>
+        <p>
+            Ton trenował w najdziwniejszych miejscach – od szczytów gór, gdzie walczył z wiatrem, po dno oceanu, gdzie nauczył się kontrolować oddech do tego stopnia, że pewnego razu zapomniał oddychać na trzy dni, po czym wrócił do życia, twierdząc, że to była „przerwa taktyczna”. 
+        </p>
+        <p>
+            Jego styl walki jest oparty na zasadzie „Jeśli nie wiesz, co robisz, przeciwnik również tego nie wie, więc masz przewagę”. Uważa, że najlepsze techniki to te, które wyglądają jak błąd, ale w rzeczywistości są genialnym manewrem strategicznym. 
+        </p>
+        <p>
+            Jako trener Ton słynie z nietypowych metod nauczania. Zamiast zwykłej rozgrzewki każe uczniom patrzeć na matę przez dwadzieścia minut, żeby „zrozumieli jej esencję”. Każdego ranka zadaje filozoficzne pytania, na które nie ma odpowiedzi, wierząc, że zmusza to uczniów do myślenia poza schematami. Na przykład: „Czy mata poddaje się, gdy na nią upadasz?”
+        </p>
+        <p>
+            Poza matą Trener Ton jest zapalonym kolekcjonerem kamyków, które przypominają mu różne techniki walki. Prowadzi również badania nad tym, czy można wykonać dźwignię na samego siebie w sposób, który doprowadzi do równoczesnej wygranej i przegranej w walce.
+        </p>
+        <p>
+            Jeśli szukasz trenera, który nie tylko nauczy cię BJJ, ale też sprawi, że zaczniesz kwestionować rzeczywistość i zasady logiki, Trener Ton jest najlepszym wyborem. Po jednym treningu z nim będziesz gotowy na wszystko – nawet na walkę z samym sobą.
+        </p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

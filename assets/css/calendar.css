@@ -1,0 +1,78 @@
+:root {
+    --primary: #ed5e81;
+    --background: #d6cde8;
+    --background-secondary: #1f1b2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --gi-color: #00a550;
+    --nogi-color: #ffcc00;
+    --sparring-color: #d10000;
+    --rest-color: #808080;
+    --highlight: #a000a0;
+    --accent: #ffd700;
+    --font-main: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--background);
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.schedule {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--background-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+.schedule th, .schedule td {
+    border: none;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+}
+.schedule th {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    font-size: 1.2em;
+}
+.schedule td {
+    background-color: var(--background-secondary);
+}
+.training-gi {
+    background-color: var(--gi-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.training-nogi {
+    background-color: var(--nogi-color);
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.training-sparing {
+    background-color: var(--sparring-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.training-rest {
+    background-color: var(--rest-color);
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+    <style>
+        /* Styl przycisku */
+        .video-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .prompt-button {
+            background-color: #ff4500;
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .prompt-button:hover {
+            background-color: #e63900;
+            transform: scale(1.05);
+        }
+
+        /* Modal - wyskakujące okno */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .modal iframe {
+            width: 90%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 10px;
+        }
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div> 
+
+    <main id="main" class="flexbox-col">
+        <h2>Lorem ipsum!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum corporis, rerum doloremque iste sed voluptates omnis molestias molestiae animi recusandae labore sit amet delectus ad necessitatibus laudantium qui! Magni quisquam illum quaerat necessitatibus sint quibusdam perferendis! Aut ipsam cumque deleniti error perspiciatis iusto accusamus consequuntur assumenda. Obcaecati minima sed natus?</p>
+        
+        <!-- Przycisk do wyświetlenia modalu -->
+        <div class="video-container">
+            <button class="prompt-button" onclick="openModal()">Kliknij, aby zobaczyć film</button>
+        </div>
+    </main>
+
+    <!-- Modal z filmem -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('video-frame').src = "https://www.youtube.com/embed/mUl-D6MATvA";
+            document.getElementById('video-modal').style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('video-frame').src = "";
+            document.getElementById('video-modal').style.display = "none";
+        }
+
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
