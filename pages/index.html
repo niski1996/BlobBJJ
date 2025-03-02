@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlobBJJ</title>
     <link rel="icon" type="image/webp"href="assets/icons/logo.webp">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
 </head>
 <body>
-    <iframe src="components/header.html"></iframe>
+    <div id="header-container"></div> 
+
 
     <main id="main" class="flexbox-col">
         <h2>Lorem ipsum!</h2>
@@ -20,5 +21,14 @@
     <footer>
         <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
 </body>
 </html>

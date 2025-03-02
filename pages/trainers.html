@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trenerzy</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BlobBJJ</title>
+    <link rel="icon" type="image/webp"href="../assets/icons/logo.webp">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Trenerzy Klubu</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Strona główna</a></li>
-                <li><a href="trenerzy.html">Trenerzy</a></li>
-                <li><a href="techniki.html">Techniki</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>Nasi Trenerzy</h2>
-        <div class="trainer">
-            <img src="images/trener1.jpg" alt="Trener 1">
-            <p>Jan Kowalski - czarny pas BJJ</p>
-        </div>
-        <div class="trainer">
-            <img src="images/trener2.jpg" alt="Trener 2">
-            <p>Adam Nowak - czarny pas BJJ</p>
-        </div>
-    </section>
+    <div id="header-container"></div> 
+
+
+
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+
+    <script>
+        fetch("../components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
 </body>
 </html>
