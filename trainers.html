@@ -7,7 +7,7 @@
     <title>BlobBJJ</title>
     <link rel="icon" type="image/webp" href="../assets/icons/logo.webp">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/trainers.css">
+    <link rel="stylesheet" href="assets/css/trainers.css">
     <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
 </head>
 
@@ -16,25 +16,25 @@
     <div class="gallery">
         <div class="gallery-item">
             <a href="gon.html">
-                <img src="/assets/images/trainers/gon.webp" alt="trener">
+                <img src="assets/images/trainers/gon.webp" alt="trener">
                 <div class="caption">Trener Gon</div>
             </a>
         </div>
         <div class="gallery-item">
             <a href="jon.html">
-                <img src="/assets/images/trainers/jon.jpg" alt="trener">
+                <img src="assets/images/trainers/jon.jpg" alt="trener">
                 <div class="caption">Trener Jon</div>
             </a>
         </div>
         <div class="gallery-item">
             <a href="kon.html">
-                <img src="/assets/images/trainers/kon.webp" alt="trener">
+                <img src="assets/images/trainers/kon.webp" alt="trener">
                 <div class="caption">Trener Kon</div>
             </a>
         </div>
         <div class="gallery-item">
             <a href="ton.html">
-                <img src="/assets/images/trainers/ton.webp" alt="trener">
+                <img src="assets/images/trainers/ton.webp" alt="trener">
                 <div class="caption">Trener Ton</div>
             </a>
         </div>
@@ -48,7 +48,7 @@
 
 
     <script>
-        fetch("/components/header.html")
+        fetch("components/header.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
