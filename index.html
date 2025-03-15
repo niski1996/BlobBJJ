@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animacja Ludzika</title>
-    <link rel="stylesheet" href="./assets/css/pacmanButton.html">
-    <link rel="stylesheet" href="./pac.css">
+    <title>Animacja Pac-Mana</title>
+    <link rel="stylesheet" href="./pac.css"> <!-- Usunięcie błędnego CSS -->
 </head>
 <body>
+    <div class="custom-cursor"></div>
     <div id="pac-Bttn"></div>
-    
-
 
 <script>
     fetch("pacmanButton.html")
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Błąd wczytywania pliku");
+        }
+        return response.text();
+    })
     .then(data => {
-        document.getElementById("pac-Bttn").innerHTML = data
+        document.getElementById("pac-Bttn").innerHTML = data;
+        
+        const pacman = document.querySelector(".pacman");
+        if (pacman) {
+            pacman.addEventListener("mouseenter", rotatePacman);
+        } else {
+            console.error("Nie znaleziono .pacman w pacmanButton.html!");
+        }
+    })
+    .catch(error => console.error("Błąd:", error));
+
+
+
+    const cursor = document.querySelector(".custom-cursor");
+    let firstMove = false;
+    
+    document.addEventListener("mousemove", (event) => {
+        if (!firstMove) {
+            cursor.style.opacity = "1"; 
+            firstMove = true;
+        }
+
+        let realX = event.clientX;
+        let realY = event.clientY;
+
+        cursor.style.transform = `translate(${realX}px, ${realY}px)`;
     });
+
+    function rotatePacman(event) {
+        const pacman = event.target; 
+        const rect = pacman.getBoundingClientRect();
+        const pacX = rect.left + rect.width / 2; 
+        const pacY = rect.top + rect.height / 2; 
+
+        const deltaX = event.clientX - pacX; 
+        const deltaY = event.clientY - pacY; 
+
+        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI); 
+        pacman.style.setProperty('--angle', `${angle}deg`);
+        document.querySelector(".custom-cursor").style.background = "none"
+    }
 </script>
 </body>
 </html>
