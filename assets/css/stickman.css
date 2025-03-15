@@ -1,0 +1,108 @@
+/*body*/
+.stickman{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: red;
+
+}
+div {
+    animation: none;
+}
+.anim{
+    opacity: 1;
+}
+.head{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    top:10px;
+    left:51px;
+}
+.body{
+
+    position: absolute;
+    top:40px;
+    left: 61px;
+    width: 10px;
+    height: 80px;
+    background: green;
+}
+
+@keyframes rotate-shoulder-right {
+    0% {
+        
+    }
+    100% {
+        transform: rotate(30deg); 
+    }
+}
+
+@keyframes move-forearm-right{
+    0% {
+        
+    }
+    100% {
+        transform: translate(-22px,-5px) rotate(120deg);
+    }
+}
+
+.shoulder.right {
+    opacity: 1;
+    position: absolute;
+    top: 40px;
+    left: 56px;
+    transform-origin: top center;
+    animation: rotate-shoulder 4s forwards ;
+}
+
+.forearm.right {
+    width: 5px;
+    height: 40px;
+    background: rgb(0, 255, 0);
+    position: absolute; 
+    top: 85px;
+    left: 56px;
+    transform-origin: top center;
+    animation: move-forearm-right 4s forwards ;
+}
+
+.shoulder{
+    width: 5px;
+    height: 45px;
+    background: yellowgreen;
+}
+
+.leg{
+    background: cyan;
+}
+
+.thigh{
+    width: 5px;
+    height: 40px;
+    background: gray;
+
+}
+.calf{
+    width: 5px;
+    height: 40px;
+    background: gainsboro;
+}
+
+
+/*helpers*/
+
+.container {
+    display: flex; 
+}
+
+.horizontal {
+    flex-direction: row;
+    align-content: space-around;
+}
+.vertical {
+    flex-direction: row;
+    align-content: space-around;
+}
