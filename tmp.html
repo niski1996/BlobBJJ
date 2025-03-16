@@ -1,121 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wave Div</title>
-    <style>
-        .big{
-            height: 300px;
-            width: 200px;
-        }
-        .fluffy{
-            width: 600px;
-            animation: poop 4s forwards;
-            transform-origin: bottom;
-            
-        }
-
-        @keyframes poop {
-            0%{
-                transform: scale(1,0.01);
-            }
-            10%{
-                transform: scale(1,0.7) translate(-20px); 
-            }
-            50%{
-                transform: scale(1,1) translate(-150px);
-            }
-            90%{
-                transform: scale(1,0.2) translate(-380px);   
-            }
-            100%{
-                transform: scale(1,0.01) translate(-400px);
-            }
-            
-        }
-
-        .one{
-            height: 100px;
-            width: 200px;
-            background: red;
-            overflow: hidden;
-        }
-        .two{
-            height: 100px;
-            width: 200px;
-            background: hsl(123, 74%, 49%);
-        }
-        .three{
-            height: 100px;
-            width: 200px;
-            background: blueviolet;
-        }
-        
-        /* Container styling */
-        .wave-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding-top: 50px;
-            overflow: hidden;
-        }
-
-        /* Wave SVG styling */
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px; /* Adjust the height of the wave */
-        }
-
-        /* Optional: Add animation to the wave */
-        @keyframes wave-animation {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .wave svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 200%; /* Double the width for seamless animation */
-            height: 100%;
-            animation: wave-animation 5s linear infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fala Kołowa (JS)</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .circle-wave {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 600px;
+      height: 200px;
+      overflow: hidden;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .stick {
+      width: 1px;
+      height: 40px;
+      background: #F2D648;
+      transform-origin: bottom; /* Ensure rotation happens from the bottom */
+    }
+  </style>
 </head>
 <body>
-    <div class="big">
-        <div class="one">
-            <div class="fluffy">
-                <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#daa520" fill-opacity="1" d="M0,160L24,149.3C48,139,96,117,144,128C192,139,240,181,288,186.7C336,192,384,160,432,138.7C480,117,528,107,576,112C624,117,672,139,720,149.3C768,160,816,160,864,138.7C912,117,960,107,1008,112C1056,117,1104,139,1152,149.3C1200,160,1248,160,1296,138.7C1344,117,1392,107,1416,101.3L1440,96L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
-                </svg>
+  <div class="circle-wave"></div>
+  <script>
+    const container = document.querySelector('.circle-wave');
+    const numSticks = 600; // Increased number of sticks for smoother wave
+    // Generate all the stick elements
 
-            </div>
+    
+    for (let i = 0; i < numSticks; i++) {
+      const stick = document.createElement('div');
+      stick.classList.add('stick');
+      container.appendChild(stick);
+    }
+    
+    // const sticks = document.querySelectorAll('.stick');
+    // const amplitude = 40;
+    // const frequency = 0.02;  
+    // const speed = 0.03;      
+    // let t = 0;
+    
+    // function easeInOutSine(x) {
+    //   return -(Math.cos(Math.PI * x) - 1) / 2;
+    // }
 
-        </div>
-        <div class="two"></div>
-        <div class="three"></div>
-    </div>
-
-    <div class="wave-container">
-        <h1>Wave Effect</h1>
-        <div class="wave">
-            <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#ffffff" fill-opacity="1" d="M0,160L24,149.3C48,139,96,117,144,128C192,139,240,181,288,186.7C336,192,384,160,432,138.7C480,117,528,107,576,112C624,117,672,139,720,149.3C768,160,816,160,864,138.7C912,117,960,107,1008,112C1056,117,1104,139,1152,149.3C1200,160,1248,160,1296,138.7C1344,117,1392,107,1416,101.3L1440,96L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
-            </svg>
-        </div>
-    </div>
-
+    // function animate() {
+    //   sticks.forEach((stick, i) => {
+    //     // Calculate sinusoidal value and normalize to [0,1]
+    //     let norm = (Math.sin(i * frequency + t) + 1) / 2;
+    //     // Apply easing function for smoother transition
+    //     let eased = easeInOutSine(norm);
+    //     // Calculate offset – multiply by amplitude
+    //     let offset = amplitude * eased;
+    //     stick.style.transform = `translateY(${-offset}px)`;
+    //   });
+    //   t += speed;
+    //   requestAnimationFrame(animate);
+    // }
+    
+    // animate();
+  </script>
 </body>
 </html>

@@ -9,26 +9,64 @@
 <body>
     <div class="custom-cursor"></div>
     <div id="pac-Bttn"></div>
+    <div class="tmp"></div>
 
 <script>
-    fetch("pacmanButton.html")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Błąd wczytywania pliku");
+    async function loadPacman(){
+        await fetch("pacmanButton.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Błąd wczytywania pliku");
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("pac-Bttn").innerHTML = data;
+            
+            const pacman = document.querySelector(".pacman");
+            if (pacman) {
+                pacman.addEventListener("mouseenter", rotatePacman);
+            } else {
+                console.error("Nie znaleziono .pacman w pacmanButton.html!");
+            }
+        })
+        .catch(error => console.error("Błąd:", error));
+
+        let container = document.querySelector(".circle-wave")
+
+
+        const numStick = 60;
+        for (let i = 0; i<numStick; i++){
+            let stick = document.createElement('div')
+            stick.classList.add('stick')
+            container.appendChild(stick)
         }
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById("pac-Bttn").innerHTML = data;
+
+            
+        const sticks = document.querySelectorAll('.stick');
+        const amplitude = 40;
+        const frequency = 0.04;  
+        const speed = 0.03;      
+        let t = 0;
         
-        const pacman = document.querySelector(".pacman");
-        if (pacman) {
-            pacman.addEventListener("mouseenter", rotatePacman);
-        } else {
-            console.error("Nie znaleziono .pacman w pacmanButton.html!");
+        function easeInOutSine(x) {
+        return -(Math.cos(Math.PI * x) - 1) / 2;
         }
-    })
-    .catch(error => console.error("Błąd:", error));
+            function animate() {
+      sticks.forEach((stick, i) => {
+        let norm = (Math.sin(i * frequency + t) + 1) / 2;
+        let eased = easeInOutSine(norm);
+        let offset = amplitude * eased;
+        stick.style.transform = `translateY(${-offset}px)`;
+      });
+      t += speed;
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+            
+
+    }
 
 
 
@@ -60,6 +98,11 @@
         pacman.style.setProperty('--angle', `${angle}deg`);
         document.querySelector(".custom-cursor").style.background = "none"
     }
+
+    loadPacman()
+
+
+    console.log("duopa")
 </script>
 </body>
 </html>

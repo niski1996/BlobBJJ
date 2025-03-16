@@ -11863,7 +11863,7 @@ textarea.form-control-lg {
 }
 
 body {
-  background: #000;
+  background: #000000;
   color: #fff;
   padding: 0;
   margin: 0;
@@ -11889,6 +11889,40 @@ h1, .h1 {
 
 .pacman-btn button {
   background: #F2D648;
+  width: 150px;
+}
+
+.wave-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wave {
+  width: 150px;
+  min-height: 10px;
+  margin-bottom: -10px;
+  margin-top: -10px;
+  overflow: hidden;
+}
+
+.circle-wave {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 150px;
+  height: 200px;
+  background: blueviolet;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: -10px;
+}
+
+.stick {
+  width: 10px;
+  height: 40px;
+  background: #F2D648;
+  transform-origin: bottom; /* Ensure rotation happens from the bottom */
 }
 
 .pacman {
@@ -11898,7 +11932,7 @@ h1, .h1 {
   background: #F2D648;
   position: relative;
   margin-left: -15px;
-  z-index: 101;
+  z-index: 999;
 }
 .pacman__eye {
   position: absolute;
