@@ -3,120 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animacja Pac-Mana</title>
-    <link rel="stylesheet" href="./pac.css"> <!-- Usunięcie błędnego CSS -->
+    <title>BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="assets/icons/logo.webp">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="custom-cursor"></div>
-    <div id="pac-Bttn"></div>
-    <div class="tmp"></div>
+    <div id="header-container"></div> 
 
-<script>
-    let eated = false;
-    let isOverPacman = false;
+    <main class="content-container">
+        <section class="content-section">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <img src="https://picsum.photos/300/200" alt="Random Image 1" class="img-left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum corporis, rerum doloremque iste sed voluptates omnis molestias. Magni quisquam illum quaerat necessitatibus sint quibusdam perferendis! Natus fugiat labore similique? Mollitia consequatur pariatur accusantium, dignissimos in voluptatum tenetur asperiores molestiae ad.</p>
+        </section>
 
-    async function loadPacman(){
-        await fetch("pacmanButton.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Błąd wczytywania pliku");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById("pac-Bttn").innerHTML = data;
-            
-            const pacman = document.querySelector(".pacman");
-            if (pacman && !eated) {
-                pacman.addEventListener("mouseenter", rotatePacman);
-            } else {
-                console.error("Nie znaleziono .pacman w pacmanButton.html!");
-            }
-        })
-        .catch(error => console.error("Błąd:", error));
+        <section class="content-section">
+            <h2>Dolor sit amet consectetur</h2>
+            <img src="https://picsum.photos/300/200" alt="Random Image 2" class="img-right">
+            <p>Obcaecati minima sed natus? Totam itaque nam dolorum cupiditate, corrupti voluptates eveniet ex laboriosam quis earum. Quisquam, voluptatibus placeat! Lorem ipsum dolor sit amet consectetur. Nesciunt quidem, repellendus aliquid nam incidunt numquam ad saepe architecto, ipsam ullam, in libero delectus atque fugit.</p>
+        </section>
 
-        let container = document.querySelector(".circle-wave")
-        let containerRev = document.querySelector(".circle-wave-reversed")
+        <section class="content-section">
+            <h2>Consectetur adipisicing elit</h2>
+            <img src="https://picsum.photos/300/200" alt="Random Image 3" class="img-left">
+            <p>Voluptas ducimus, quis incidunt facere possimus beatae aliquid! Similique illum dolores ex error. Iusto reiciendis delectus necessitatibus corporis nisi incidunt, ab vero exercitationem! Veritatis minus harum nemo, assumenda rerum reiciendis perspiciatis deserunt, incidunt at non exercitationem saepe, quia accusantium doloribus ut?</p>
+        </section>
 
-
-        const numStick = 60;
-        for (let i = 0; i<numStick; i++){
-            let stick = document.createElement('div')
-            let stickR = document.createElement('div')
-            stick.classList.add('stick')
-            stickR.classList.add('stick')
-            container.appendChild(stick)
-            containerRev.appendChild(stickR)
-
-        }
-
-            
-        const sticks = document.querySelectorAll('.stick');
-        const amplitude = 10;
-        const frequency = 0.08;  
-        const speed = 0.03;      
-        let t = 0;
-        
-        function easeInOutSine(x) {
-        return -(Math.cos(Math.PI * x) - 1) / 2;
-        }
-            function animate() {
-      sticks.forEach((stick, i) => {
-        let norm = (Math.sin(i * frequency + t) + 1) / 2;
-        let eased = easeInOutSine(norm);
-        let offset = amplitude * eased;
-        stick.style.transform = `translateY(${-offset}px)`;
-      });
-      t += speed;
-      requestAnimationFrame(animate);
-    }
-    animate();
-    }
-
-
-
-    const cursor = document.querySelector(".custom-cursor");
-    let firstMove = false;
+        <section class="content-section">
+            <h2>Quisquam eveniet voluptatibus</h2>
+            <img src="https://picsum.photos/300/200" alt="Random Image 4" class="img-right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, sint. Est dolorem aliquid, illum quae reprehenderit expedita in accusamus optio quam, repellat minima modi, rem nesciunt odio. Asperiores dolores id, molestiae minus esse voluptatibus similique? Eius labore incidunt fugiat dolorum.</p>
+        </section>
+    </main>
     
-    document.addEventListener("mousemove", (event) => {
-        if (!firstMove) {
-            cursor.style.opacity = "1"; 
-            firstMove = true;
-        }
-
-        let realX = event.clientX;
-        let realY = event.clientY;
-
-        if (!isOverPacman) {
-            let realX = event.clientX;
-            let realY = event.clientY;
-            cursor.style.transform = `translate(${realX}px, ${realY}px)`;
-        }
-    });
-
-    function rotatePacman(event) {
-        const pacman = event.target; 
-        const rect = pacman.getBoundingClientRect();
-        const pacX = rect.left + rect.width / 2; 
-        const pacY = rect.top + rect.height / 2; 
-
-        const deltaX = event.clientX - pacX; 
-        const deltaY = event.clientY - pacY; 
-        const newX = rect.left + rect.width / 2; 
-        const newY = rect.top + rect.height / 2; 
-    
-        cursor.style.transform = `translate(${newX}px, ${newY}px)`;
-
-        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI); 
-        pacman.style.setProperty('--angle', `${angle}deg`);
-        document.querySelector(".custom-cursor").style.background = "url('assets/icons/poop.png')";
-        document.querySelector(".custom-cursor").style.backgroundSize = "cover";
-        eated = true;
-
-    }
-
-    loadPacman()
-
-</script>
+    <footer>
+        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        fetch("./components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
 </body>
 </html>
