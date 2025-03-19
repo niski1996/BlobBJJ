@@ -12,6 +12,9 @@
     <div class="tmp"></div>
 
 <script>
+    let eated = false;
+    let isOverPacman = false;
+
     async function loadPacman(){
         await fetch("pacmanButton.html")
         .then(response => {
@@ -24,7 +27,7 @@
             document.getElementById("pac-Bttn").innerHTML = data;
             
             const pacman = document.querySelector(".pacman");
-            if (pacman) {
+            if (pacman && !eated) {
                 pacman.addEventListener("mouseenter", rotatePacman);
             } else {
                 console.error("Nie znaleziono .pacman w pacmanButton.html!");
@@ -33,19 +36,24 @@
         .catch(error => console.error("Błąd:", error));
 
         let container = document.querySelector(".circle-wave")
+        let containerRev = document.querySelector(".circle-wave-reversed")
 
 
         const numStick = 60;
         for (let i = 0; i<numStick; i++){
             let stick = document.createElement('div')
+            let stickR = document.createElement('div')
             stick.classList.add('stick')
+            stickR.classList.add('stick')
             container.appendChild(stick)
+            containerRev.appendChild(stickR)
+
         }
 
             
         const sticks = document.querySelectorAll('.stick');
-        const amplitude = 40;
-        const frequency = 0.04;  
+        const amplitude = 10;
+        const frequency = 0.08;  
         const speed = 0.03;      
         let t = 0;
         
@@ -62,10 +70,7 @@
       t += speed;
       requestAnimationFrame(animate);
     }
-    
     animate();
-            
-
     }
 
 
@@ -82,7 +87,11 @@
         let realX = event.clientX;
         let realY = event.clientY;
 
-        cursor.style.transform = `translate(${realX}px, ${realY}px)`;
+        if (!isOverPacman) {
+            let realX = event.clientX;
+            let realY = event.clientY;
+            cursor.style.transform = `translate(${realX}px, ${realY}px)`;
+        }
     });
 
     function rotatePacman(event) {
@@ -93,16 +102,21 @@
 
         const deltaX = event.clientX - pacX; 
         const deltaY = event.clientY - pacY; 
+        const newX = rect.left + rect.width / 2; 
+        const newY = rect.top + rect.height / 2; 
+    
+        cursor.style.transform = `translate(${newX}px, ${newY}px)`;
 
         const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI); 
         pacman.style.setProperty('--angle', `${angle}deg`);
-        document.querySelector(".custom-cursor").style.background = "none"
+        document.querySelector(".custom-cursor").style.background = "url('assets/icons/poop.png')";
+        document.querySelector(".custom-cursor").style.backgroundSize = "cover";
+        eated = true;
+
     }
 
     loadPacman()
 
-
-    console.log("duopa")
 </script>
 </body>
 </html>
