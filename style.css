@@ -1,5 +1,158 @@
+/*Colors*/
+/* Sizes */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a:visited {
+  color: rgba(98, 87, 133, 0.6);
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  color: hsl(var(--text-primary));
+  font-family: var(--font-main);
+  background: rgb(0, 26, 6);
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.8);
+}
+
+/* Font */
+h1 {
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Paragraphs */
+p {
+  color: rgba(98, 87, 133, 0.6);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: rgba(98, 87, 133, 0.6);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgba(98, 87, 133, 0.6);
+}
+
+ul {
+  margin: 1em 0;
+}
+
 body {
-  background: #028824;
+  min-height: 100lvh;
+  font-weight: 400;
+}
+
+.shadow {
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  border: none;
+  border-radius: 100%;
+  pointer-events: none;
+}
+.shadow .inner {
+  position: absolute;
+}
+
+#outer {
+  background-color: rgba(255, 255, 0, 0.002);
+  top: -500px;
+  left: -500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(0, 49, 12, 0.001) 100%);
+  z-index: 10;
+}
+
+/*  navbar */
+.navbar-logo {
+  margin: 0 0 2em 0;
+  width: 100%;
+  height: 5em;
+}
+
+.navbar-logo > .navbar-item-inner > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+#navbar {
+  top: 0;
+  background: blue;
+  padding: 0;
+  width: 5em;
+  height: 100vh;
+  position: fixed;
+  background-color: hsl(var(--background-secondary));
+  transition: width 0.35s cubic-bezier(0.175, 0.685, 0.32, 1);
+  overflow-x: hidden;
+}
+
+a:visited {
+  color: hsla(var(--primary), 0.5);
+}
+
+.link-text {
+  margin: 0;
+  width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.35s cubic-bezier(var(--transition-main), 1);
+  overflow: hidden;
+  opacity: 0;
+}
+
+#navbar:hover .link-text {
+  width: calc(100% - (5rem - 8px));
+  opacity: 1;
+}
+
+/*main*/
+#main {
+  margin: 0 0 0 5em;
+  min-height: 150vh;
+}
+
+#main > h2 {
+  width: 80%;
+  max-width: 80%;
+}
+
+#main > p {
+  width: 80%;
+  max-width: 80%;
+}
+
+.flexbox-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
