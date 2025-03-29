@@ -35,7 +35,7 @@ body {
   margin: 0;
   width: 100%;
   color: $secondary-text-hover;
-  background: $primary-background;
+  background: $primary-background !important;
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -45,7 +45,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  color: $headings;
+  color: $headings !important;
 }
 
 /* Font */
@@ -119,7 +119,9 @@ ul {
   p {
     width: 80%;
     max-width: 80%;
-  }}
+  }
+}
+
   
 .shadow {
   position: fixed;
@@ -167,7 +169,7 @@ ul {
 
 #navbar:hover {
   width: 16em;
-  background: red;
+  background: $secondary-background;
 }
 
 .navbar-items {
@@ -184,6 +186,10 @@ ul {
 
   .navbar-item-inner {
     width: calc(5rem - 8px);
+    img{
+      width: 100%;
+      border-radius: 50%;
+    }
   }
 
 }

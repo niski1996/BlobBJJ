@@ -15,7 +15,7 @@ body {
   margin: 0;
   width: 100%;
   color: rgba(98, 87, 133, 0.6);
-  background: rgb(0, 26, 6);
+  background: rgb(0, 26, 6) !important;
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
@@ -25,7 +25,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  color: rgba(226, 232, 240, 0.8);
+  color: rgba(226, 232, 240, 0.8) !important;
 }
 
 /* Font */
@@ -140,7 +140,7 @@ ul {
 
 #navbar:hover {
   width: 16em;
-  background: red;
+  background: rgb(179, 179, 11);
 }
 
 .navbar-items {
@@ -157,6 +157,10 @@ ul {
 }
 .navbar-logo .navbar-item-inner {
   width: calc(5rem - 8px);
+}
+.navbar-logo .navbar-item-inner img {
+  width: 100%;
+  border-radius: 50%;
 }
 
 /* Navbar Items */
@@ -184,11 +188,6 @@ ul {
 .navbar-item-inner-icon-wrapper {
   width: calc(5rem - 1em - 8px);
   position: relative;
-}
-
-.navbar-item-inner-icon-wrapper ion-icon {
-  position: absolute;
-  font-size: calc(var(--navbar-buttons) - 1rem);
 }
 
 .link-text {
