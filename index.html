@@ -71,12 +71,39 @@
         <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
     </footer>
     <script>
-        fetch("./components/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
-            });
+        let MenuUnwrapped = false;
 
+
+        fetch("./components/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+        })
+        .then(() => {
+            document.getElementById("wrapper").addEventListener("click", function(){
+                let wrap = document.getElementById("wrapper");
+                if (MenuUnwrapped){
+                    document.getElementById("navbar").style.width = "0vw";
+
+                    wrap.classList.remove("wrapper-right")
+                    wrap.classList.add("wrapper-left")
+                    MenuUnwrapped=false;
+                }
+                else{
+                    document.getElementById("navbar").style.width = "100vw";
+                    wrap.classList.remove("wrapper-left")
+                    wrap.classList.add("wrapper-right")
+                    MenuUnwrapped=true;
+                    // console.log("ou")
+                }
+                
+
+                })
+            })
+        .catch(error => {
+            console.error("Błąd przy ładowaniu pliku:", error);
+        });
+    
         const circleElement = document.querySelector('.shadow');
 
         const mouse = { x: 0, y: 0 },
@@ -101,6 +128,7 @@
         }
 
         tick();
+
 
     </script>
 </body>
