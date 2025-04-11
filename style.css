@@ -92,6 +92,7 @@ ul {
   margin: 1rem 0 0 30vw;
   min-height: 150vh;
   text-align: justify;
+  max-width: 70vw;
 }
 #main h2 {
   width: 80%;
@@ -103,17 +104,18 @@ ul {
 }
 
 .shadows {
+  border-radius: 50%;
   position: fixed;
   width: 70vw;
   height: 70vw;
   box-shadow: none !important;
   filter: none !important;
-  background: radial-gradient(circle, rgba(0, 50, 12, 0.4) 0%, rgba(0, 26, 6, 0.001) 70%);
+  background: radial-gradient(circle, rgba(0, 78, 18, 0.4) 0%, rgba(0, 26, 6, 0.2) 70%);
   border: none;
   pointer-events: none;
   top: -35vw;
   left: -35vw;
-  z-index: 10;
+  z-index: 1;
 }
 
 .content-section {
@@ -143,10 +145,12 @@ ul {
   #menu-cover {
     display: flex;
     flex-direction: row;
+    z-index: 80;
   }
   .navbar-logo {
     visibility: hidden;
     height: 0px;
+    z-index: 80;
   }
   #navbar {
     top: 0;
@@ -157,6 +161,7 @@ ul {
     overflow-y: hidden;
     overflow-x: hidden;
     background: rgb(179, 179, 11);
+    z-index: 80;
   }
   #navbar .navbar-item {
     margin: 2vh 0 2vh 0;
@@ -219,6 +224,7 @@ ul {
     transition: width 0.35s cubic-bezier(0.175, 0.685, 0.32, 1);
     overflow-y: hidden;
     overflow-x: hidden;
+    z-index: 90 !important;
   }
   .wrapper-right:hover {
     animation: slideLoop 1s infinite;
@@ -244,9 +250,11 @@ ul {
     visibility: hidden;
     position: absolute;
     top: 0;
+    z-index: 90;
   }
   #main {
     margin: 1rem 0 0 5em;
+    z-index: 1;
   }
   #navbar {
     top: 0;
@@ -257,6 +265,7 @@ ul {
     transition: width 0.35s cubic-bezier(0.175, 0.685, 0.32, 1);
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 80;
   }
   #navbar:hover {
     width: 16em;
@@ -399,18 +408,19 @@ ul {
     top: 50%;
     left: 20px;
     width: 0;
-    height: 6px; /* Grubość linii */
-    background-color: rgba(98, 87, 133, 0.6); /* Kolor linii */
+    height: 6px;
+    background-color: rgba(98, 87, 133, 0.6);
     transition: width 0.3s ease-in-out;
     transform: translateY(-50%);
   }
   .underline-effect:hover::before {
-    width: 30%; /* Kreska rozciąga się na całą szerokość napisu */
+    width: 30%;
   }
 }
 /* Trainers */
 #main-trainers {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
@@ -418,7 +428,10 @@ ul {
 }
 
 #myCarousel {
-  padding: 10rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 0;
   width: 80%;
   max-width: 80%;
   margin: 0 auto;
@@ -426,9 +439,56 @@ ul {
   border-radius: 8px;
   overflow: hidden;
 }
+#myCarousel img {
+  width: 1000px;
+  height: 1000px;
+  object-fit: cover;
+}
 
 .increase-visibility {
   background: radial-gradient(circle, rgba(0, 95, 22, 0.951) 0%, rgba(0, 46, 11, 0.007) 70%);
+}
+
+.gallery-img-container {
+  width: 100%; /* Pełna szerokość kolumny */
+  height: 300px; /* Stała wysokość */
+  overflow: hidden; /* Przycina nadmiarową część */
+  border-radius: 10px;
+  position: relative; /* Potrzebne dla absolutnego pozycjonowania obrazka */
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  z-index: 20; /* Ustawia z-index na 1 */
+}
+.gallery-img-container img {
+  width: 100%; /* Pełna szerokość kontenera */
+  height: 100%; /* Pełna wysokość kontenera */
+  object-fit: cover; /* Przycina zachowując proporcje */
+  object-position: top; /* Wyśrodkowuje obraz w kontenerze */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-container:hover .gallery-img:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.modal-img {
+  border-radius: 10px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
