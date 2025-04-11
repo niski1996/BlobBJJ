@@ -90,7 +90,6 @@ ul {
 /*main*/
 #main {
   margin: 1rem 0 0 30vw;
-  min-height: 150vh;
   text-align: justify;
   max-width: 70vw;
 }
@@ -416,35 +415,10 @@ ul {
   .underline-effect:hover::before {
     width: 30%;
   }
+  #caroulsel img {
+    object-position: top;
+  }
 }
-/* Trainers */
-#main-trainers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-  height: 70vh;
-}
-
-#myCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 0;
-  width: 80%;
-  max-width: 80%;
-  margin: 0 auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-}
-#myCarousel img {
-  width: 1000px;
-  height: 1000px;
-  object-fit: cover;
-}
-
 .increase-visibility {
   background: radial-gradient(circle, rgba(0, 95, 22, 0.951) 0%, rgba(0, 46, 11, 0.007) 70%);
 }
@@ -489,6 +463,126 @@ ul {
 .modal-img {
   border-radius: 10px;
   width: 100%;
+}
+
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.schedule th,
+.schedule td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.schedule th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.schedule tr {
+  transition: all 0.3s ease;
+}
+
+.schedule tr:hover {
+  background-color: rgba(44, 62, 80, 0.05);
+}
+
+.schedule tr:not(:first-child) td::after {
+  content: attr(data-info);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 200%;
+  padding: 1rem;
+  font-size: 0.7rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 95;
+}
+
+.schedule tr:not(:first-child) td:not([data-info])::after {
+  display: none !important;
+}
+
+.schedule tr:not(:first-child) td:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Klasy treningów */
+.training-gi {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+  font-weight: 600;
+  position: relative;
+}
+
+.training-nogi {
+  background-color: rgba(230, 126, 34, 0.1);
+  color: #d35400;
+  font-weight: 600;
+  position: relative;
+}
+
+.training-sparing {
+  background-color: rgba(155, 89, 182, 0.1);
+  color: #8e44ad;
+  font-weight: 600;
+  position: relative;
+}
+
+.training-rest {
+  background-color: rgba(149, 165, 166, 0.1);
+  color: #7f8c8d;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .schedule {
+    display: block;
+  }
+  .schedule tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  .schedule td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  .schedule td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    padding-right: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
+  .schedule td::after {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

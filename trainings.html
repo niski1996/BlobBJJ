@@ -20,8 +20,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -31,58 +29,60 @@
 
 
     <div class="shadows"></div>
-    
+    <main id="main"> 
     <h1>Rozkład Treningów BJJ</h1>
-    <table class="schedule">
-        <tr>
-            <th>Dzień</th>
-            <th>Godzina</th>
-            <th>Trening</th>
-            <th>Opis</th>
-        </tr>
-        <tr>
-            <td>Poniedziałek</td>
-            <td>18:00 - 19:30</td>
-            <td class="training-gi">Gi</td>
-            <td>Trening w kimonach, technika i sparingi</td>
-        </tr>
-        <tr>
-            <td>Wtorek</td>
-            <td>19:00 - 20:30</td>
-            <td class="training-nogi">No-Gi</td>
-            <td>Trening bez kimon, skupienie na grapplingu</td>
-        </tr>
-        <tr>
-            <td>Środa</td>
-            <td>18:00 - 19:30</td>
-            <td class="training-sparing">Sparing</td>
-            <td>Intensywne walki sparingowe</td>
-        </tr>
-        <tr>
-            <td>Czwartek</td>
-            <td>19:00 - 20:30</td>
-            <td class="training-gi">Gi</td>
-            <td>Technika, taktyka i sparingi w kimonach</td>
-        </tr>
-        <tr>
-            <td>Piątek</td>
-            <td>18:00 - 19:30</td>
-            <td class="training-nogi">No-Gi</td>
-            <td>Grappling, techniki no-gi i sparingi</td>
-        </tr>
-        <tr>
-            <td>Sobota</td>
-            <td>10:00 - 11:30</td>
-            <td class="training-sparing">Sparing</td>
-            <td>Poranne sparingi, doskonalenie umiejętności</td>
-        </tr>
-        <tr>
-            <td>Niedziela</td>
-            <td>Brak</td>
-            <td class="training-rest">Odpoczynek</td>
-            <td>Regeneracja i odpoczynek</td>
-        </tr>
-    </table>
+        <table class="schedule">
+            <tr>
+                <th>Dzień</th>
+                <th>Godzina</th>
+                <th>Trening</th>
+                <th>Opis</th>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Poniedziałek</td>
+                <td data-label="Godzina">18:00 - 19:30</td>
+                <td class="training-gi" data-label="Trening" data-info="Trening w kimonach (Gi) - skupiamy się na technikach z chwytami za kimono, doskonalimy podstawy i zaawansowane techniki">Gi</td>
+                <td data-label="Opis">Trening w kimonach, technika i sparingi</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Wtorek</td>
+                <td data-label="Godzina">19:00 - 20:30</td>
+                <td class="training-nogi" data-label="Trening" data-info="Trening No-Gi - grappling bez kimona, szybkie przejścia, techniki wrestlingowe">No-Gi</td>
+                <td data-label="Opis">Trening bez kimon, skupienie na grapplingu</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Środa</td>
+                <td data-label="Godzina">18:00 - 19:30</td>
+                <td class="training-sparing" data-label="Trening" data-info="Sparingi - praktyczne zastosowanie technik w walce, różne poziomy intensywności">Sparing</td>
+                <td data-label="Opis">Intensywne walki sparingowe</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Czwartek</td>
+                <td data-label="Godzina">19:00 - 20:30</td>
+                <td class="training-gi" data-label="Trening" data-info="Trening Gi - praca nad strategią, zaawansowane kombinacje, przygotowanie do zawodów">Gi</td>
+                <td data-label="Opis">Technika, taktyka i sparingi w kimonach</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Piątek</td>
+                <td data-label="Godzina">18:00 - 19:30</td>
+                <td class="training-nogi" data-label="Trening" data-info="No-Gi Friday - dynamiczne treningi z naciskiem na szybkość i płynność ruchów">No-Gi</td>
+                <td data-label="Opis">Grappling, techniki no-gi i sparingi</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Sobota</td>
+                <td data-label="Godzina">10:00 - 11:30</td>
+                <td class="training-sparing" data-label="Trening" data-info="Weekendowe sparingi - dłuższe rundy, symulacja warunków turniejowych">Sparing</td>
+                <td data-label="Opis">Poranne sparingi, doskonalenie umiejętności</td>
+            </tr>
+            <tr>
+                <td data-label="Dzień">Niedziela</td>
+                <td data-label="Godzina">Brak</td>
+                <td class="training-rest" data-label="Trening" data-info="Dzień regeneracji - zalecany stretching, joga lub aktywny odpoczynek">Odpoczynek</td>
+                <td data-label="Opis">Regeneracja i odpoczynek</td>
+            </tr>
+        </table>
+
+    </main>
     <script>
         let MenuUnwrapped = false;
 
