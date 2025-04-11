@@ -415,7 +415,7 @@ ul {
   .underline-effect:hover::before {
     width: 30%;
   }
-  #caroulsel img {
+  #carousel img {
     object-position: top;
   }
 }

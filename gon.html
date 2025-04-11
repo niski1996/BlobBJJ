@@ -1,47 +1,200 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trener Gon - BlobBJJ</title>
-    <link rel="icon" type="image/webp" href="./assets/icons/logo.webp">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/trainers.css">
-    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlobBJJ</title>
+    <link rel="icon" type="image/webp" href="assets/icons/logo.webp" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
     <div id="header-container"></div>
+
+    <div class="shadows"></div>
+
+    <main id="main">
+        <div class="col-lg-10 col-xl-8">
+          <div class="card shadow-lg border-0 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img
+                  src="./assets/images/trainers/gon.webp"
+                  class="img-fluid h-100 object-fit-cover"
+                  alt="Trener Gon"
+                />
+              </div>
     
-    <div class="bio-container">
-        <img src="./assets/images/trainers/gon.webp" alt="Trener Gon">
-        <h1>Trener Gon</h1>
-        <p>
-            Trener Gon to postać legendarna w świecie Brazylijskiego Jiu-Jitsu, choć jego początki były co najmniej nietypowe. Urodzony w małej wiosce położonej na szczycie góry, gdzie powietrze jest tak rzadkie, że nawet jogini tracą przytomność po pięciu minutach, Gon od dzieciństwa wykazywał niezwykłą odporność na brak tlenu. To właśnie tam, w wieku trzech lat, wynalazł własny styl walki oparty na przypadkowych upadkach i przewrotach, który z czasem został uznany za fundament jego niepowtarzalnej techniki.
-        </p>
-        <p>
-            W wieku siedmiu lat został porwany przez koczownicze plemię wędrownych akrobatów, które nauczyło go sztuki przewidywania przyszłości na podstawie ruchów przeciwnika. Po pięciu latach surowego treningu Gon wrócił do cywilizacji, by z marszu wygrać pierwsze zawody w Jiu-Jitsu, nie mając pojęcia, że bierze w nich udział – przyszedł tylko, żeby zapytać o godzinę. Jego styl walki, określany przez przeciwników mianem „chaotycznej harmonii”, jest połączeniem intuicji, improwizacji i czystego przypadku, co sprawia, że nawet najbardziej doświadczeni zawodnicy nie wiedzą, czego się po nim spodziewać.
-        </p>
-        <p>
-            Oprócz trenowania BJJ, Gon jest także pasjonatem zbierania kamieni o dziwnych kształtach oraz profesjonalnym degustatorem lodów, co często prowadzi do nieoczekiwanych wyzwań na macie, gdyż potrafi przeprowadzić sparing, jednocześnie analizując subtelne niuanse smaku czekoladowo-miętowego. Jego filozofia treningu opiera się na zasadzie: „Jeśli nie wiesz, co robisz, przeciwnik tym bardziej nie wie”, co sprawia, że jego uczniowie są przygotowani na każdą ewentualność – nawet tę, której nie da się przewidzieć.
-        </p>
-        <p>
-            Jako trener, Gon słynie z nietypowych metod nauczania. Zamiast tradycyjnego rozgrzewania, każe uczniom naśladować ruchy spadających liści. Uważa również, że najlepsza obrona to udawanie, że się nie istnieje, co kilka razy zakończyło się sukcesem w oficjalnych zawodach. 
-        </p>
-        <p>
-            Jeśli marzysz o treningu z trenerem, który jednocześnie rozśmieszy cię do łez i nauczy cię jak pokonać przeciwnika, zanim zdąży zrozumieć, co się stało, Trener Gon jest wyborem idealnym.
-        </p>
-    </div>
+              <div class="col-md-7">
+                <div class="card-body p-4 p-lg-5">
+                  <h1 class="card-title display-5 fw-bold text-primary mb-4">
+                    Trener Gon
+                  </h1>
     
-    <footer>
-        <p>&copy; 2025 Klub BJJ. Wszelkie prawa zastrzeżone.</p>
-    </footer>
+                  <div
+                    class="bio-content"
+                    style="max-height: 60vh; overflow-y: auto"
+                  >
+                    <p class="lead text-muted mb-4">
+                      Trener Gon to postać legendarna w świecie Brazylijskiego
+                      Jiu-Jitsu, choć jego początki były co najmniej nietypowe.
+                    </p>
     
+                    <div class="mb-4">
+                      <p>
+                        Urodzony w małej wiosce położonej na szczycie góry, gdzie
+                        powietrze jest tak rzadkie, że nawet jogini tracą
+                        przytomność po pięciu minutach, Gon od dzieciństwa
+                        wykazywał niezwykłą odporność na brak tlenu. To właśnie
+                        tam, w wieku trzech lat, wynalazł własny styl walki oparty
+                        na przypadkowych upadkach i przewrotach, który z czasem
+                        został uznany za fundament jego niepowtarzalnej techniki.
+                      </p>
+                      <p>
+                        W wieku siedmiu lat został porwany przez koczownicze
+                        plemię wędrownych akrobatów, które nauczyło go sztuki
+                        przewidywania przyszłości na podstawie ruchów przeciwnika.
+                        Po pięciu latach surowego treningu Gon wrócił do
+                        cywilizacji, by z marszu wygrać pierwsze zawody w
+                        Jiu-Jitsu, nie mając pojęcia, że bierze w nich udział -
+                        przyszedł tylko, żeby zapytać o godzinę.
+                      </p>
+                    </div>
+    
+                    <div class="bg-light p-3 rounded mb-4">
+                      <h5 class="fw-bold">Styl walki</h5>
+                      <p class="mb-0">
+                        Jego styl walki, określany przez przeciwników mianem
+                        „chaotycznej harmonii”, jest połączeniem intuicji,
+                        improwizacji i czystego przypadku, co sprawia, że nawet
+                        najbardziej doświadczeni zawodnicy nie wiedzą, czego się
+                        po nim spodziewać.
+                      </p>
+                    </div>
+    
+                    <p>
+                      Oprócz trenowania BJJ, Gon jest także pasjonatem zbierania
+                      kamieni o dziwnych kształtach oraz profesjonalnym
+                      degustatorem lodów, co często prowadzi do nieoczekiwanych
+                      wyzwań na macie, gdyż potrafi przeprowadzić sparing,
+                      jednocześnie analizując subtelne niuanse smaku
+                      czekoladowo-miętowego.
+                    </p>
+    
+                    <blockquote
+                      class="blockquote bg-primary text-white p-3 rounded my-4"
+                    >
+                      <p class="mb-0">
+                        „Jeśli nie wiesz, co robisz, przeciwnik tym bardziej nie
+                        wie”
+                      </p>
+                      <footer class="blockquote-footer text-white-50 mt-2">
+                        Filozofia trenera Gona
+                      </footer>
+                    </blockquote>
+    
+                    <p>
+                      Jako trener, Gon słynie z nietypowych metod nauczania.
+                      Zamiast tradycyjnego rozgrzewania, każe uczniom naśladować
+                      ruchy spadających liści. Uważa również, że najlepsza obrona
+                      to udawanie, że się nie istnieje, co kilka razy zakończyło
+                      się sukcesem w oficjalnych zawodach.
+                    </p>
+    
+                    <div class="alert alert-warning mt-4">
+                      <h5 class="alert-heading">Dla kogo?</h5>
+                      <p class="mb-0">
+                        Jeśli marzysz o treningu z trenerem, który jednocześnie
+                        rozśmieszy cię do łez i nauczy cię jak pokonać
+                        przeciwnika, zanim zdąży zrozumieć, co się stało, Trener
+                        Gon jest wyborem idealnym.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+
     <script>
-        fetch("./components/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
+      let MenuUnwrapped = false;
+
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .then(() => {
+          document
+            .getElementById("wrapper")
+            .addEventListener("click", function () {
+              let wrap = document.getElementById("wrapper");
+              if (MenuUnwrapped) {
+                document.getElementById("navbar").style.width = "0vw";
+
+                wrap.classList.remove("wrapper-right");
+                wrap.classList.add("wrapper-left");
+                MenuUnwrapped = false;
+              } else {
+                document.getElementById("navbar").style.width = "100vw";
+                wrap.classList.remove("wrapper-left");
+                wrap.classList.add("wrapper-right");
+                MenuUnwrapped = true;
+              }
             });
+        })
+        .catch((error) => {
+          console.error("Błąd przy ładowaniu pliku:", error);
+        });
+
+      const circleElement = document.querySelector(".shadows");
+
+      const mouse = { x: 0, y: 0 },
+        circle = { x: 0, y: 0 };
+
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+      });
+      const speed = 1;
+
+      const tick = () => {
+        circle.x += mouse.x - circle.x;
+        circle.y += (mouse.y - circle.y) * speed;
+
+        // Update circle element's position
+        circleElement.style.transform = `translate(${circle.x}px, ${circle.y}px)`;
+
+        // Call function on next frame
+        window.requestAnimationFrame(tick);
+      };
+
+      tick();
     </script>
-</body>
+  </body>
 </html>

@@ -83,6 +83,7 @@
         </table>
 
     </main>
+    <div id="footer-container"></div>
     <script>
         let MenuUnwrapped = false;
 
@@ -115,7 +116,11 @@
         .catch(error => {
             console.error("Błąd przy ładowaniu pliku:", error);
         });
-    
+        fetch("./components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+        });
         const circleElement = document.querySelector('.shadows');
 
         const mouse = { x: 0, y: 0 },
